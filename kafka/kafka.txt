@@ -1,0 +1,14 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties   zookeeper
+.\bin\windows\kafka-server-start.bat .\config\server.properties  for kafka
+bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1  creating topic
+.\bin\windows\kafka-console-consumer.bat --topic my-topic --bootstrap-server localhost:9092 --from-beginning     calling the topic
+.\bin\windows\kafka-server-stop.bat   stop kafka
+
+
+
+
+bin\windows\kafka-topics.bat --create --topic user-registrations --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 create tipic 
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic user-registrations --from-beginning    check form beginning
+kafka-topics.bat --list --bootstrap-server localhost:9092                                               check the list of topic
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic user-registrations                check new users  
