@@ -32,14 +32,14 @@ connectDB();
 app.use('/api/v1.0/shopping', require('./routes/userRoutes'));
 app.use('/api/v1.0/shopping', require('./routes/productRoutes'));
 app.use('/api/v1.0/shopping', require('./routes/orderRoutes'));
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
   res.status(200).send('OK');
 });
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+/* app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
-});
+}); */
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
