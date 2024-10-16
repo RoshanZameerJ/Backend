@@ -7,7 +7,7 @@ const cors = require('cors');
 const path = require('path');
 
 
-const allowedOrigins = ['https://purple-dune-0a8baa800.5.azurestaticapps.net', 'http://localhost:3000','https://backendonline-e3chhcftg2ayhab9.southindia-01.azurewebsites.net'];
+/* const allowedOrigins = ['https://purple-dune-0a8baa800.5.azurestaticapps.net', 'http://localhost:3000','https://backendonline-e3chhcftg2ayhab9.southindia-01.azurewebsites.net'];
 app.use(cors({
   origin: (origin, callback) => {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -17,7 +17,8 @@ app.use(cors({
     }
   },
   exposedHeaders: ['Authorization'] // Expose the Authorization header if needed
-}));
+})); */
+app.use(cors())
 
 app.use(express.json());
 
